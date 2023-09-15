@@ -6,6 +6,7 @@
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 
+
 // Получаем выбранные значения чекбоксов
 $player = isset($_POST['player']) ? $_POST['player'] : '';
 $trainer = isset($_POST['trainer']) ? $_POST['trainer'] : '';
