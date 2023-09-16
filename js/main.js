@@ -25,21 +25,29 @@ confidentiality.addEventListener("click", function(){
     }
 })
 
-document.addEventListener("DOMContentLoaded", function () {
-  var form = document.getElementById("myForm");
+document.addEventListener('DOMContentLoaded', function () {
+    // Обработка отправки формы
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Предотвращаем обычное отправление формы
 
-  form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      var formData = new FormData(form);
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", form.getAttribute("action"), true);
-      xhr.onload = function () {
-          if (xhr.status === 200) {
-              alert("Форма успешно отправлена!");
-          } else {
-              console.error("Произошла ошибка при отправке формы.");
-          }
-      };
-      xhr.send(formData);
-  });
+        // Создаем объект FormData для сбора данных формы
+        var formData = new FormData(this);
+
+        // Отправка данных формы на сервер с использованием Fetch API
+        fetch('telegram.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Предполагаем, что сервер возвращает JSON
+        .then(data => {
+            // Обработка успешного ответа от сервера (если нужно)
+            
+            // Отобразить модальное окно
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'block'; // Показать модальное окно
+        })
+        .catch(error => {
+            // Обработка ошибки (если нужно)
+        });
+    });
 });
