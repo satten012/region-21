@@ -4,7 +4,7 @@ let lastScrollTop = 0;
 /* hide/show header */
 window.addEventListener("scroll", function() {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Текущая позиция скролла
-
+  
   if (scrollTop == 0) {
     header.classList.remove("active");
   } else {
@@ -13,6 +13,8 @@ window.addEventListener("scroll", function() {
 
   lastScrollTop = scrollTop; 
 });
+
+/* добавление атрибута checked в инпут */
 
 const confidentiality = document.querySelector("#confidentiality")
 const agree = document.querySelector("#agree")
@@ -25,29 +27,70 @@ confidentiality.addEventListener("click", function(){
     }
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Обработка отправки формы
-    document.getElementById('myForm').addEventListener('submit', function (e) {
-        e.preventDefault(); // Предотвращаем обычное отправление формы
+/* убрать перезагрузку страницы */
 
-        // Создаем объект FormData для сбора данных формы
-        var formData = new FormData(this);
+document.addEventListener("DOMContentLoaded", function () {
+  let formSecond = document.getElementById("form-2");
+  let formFirst = document.getElementById("form-1")
 
-        // Отправка данных формы на сервер с использованием Fetch API
-        fetch('telegram.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json()) // Предполагаем, что сервер возвращает JSON
-        .then(data => {
-            // Обработка успешного ответа от сервера (если нужно)
-            
-            // Отобразить модальное окно
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'block'; // Показать модальное окно
-        })
-        .catch(error => {
-            // Обработка ошибки (если нужно)
-        });
-    });
+
+  function blockPage(elem){
+    elem.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(elem);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", elem.getAttribute("action"), true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                alert("Форма успешно отправлена!");
+            } else {
+                console.error("Произошла ошибка при отправке формы.");
+            }
+        };
+        xhr.send(formData);
+    })
+  };
+
+  formSecond.addEventListener("click", blockPage(formSecond))
+  formFirst.addEventListener("click", blockPage(formFirst))
 });
+
+/* mask phone */
+
+const inputBoxLabelPhone = document.querySelectorAll(".input-box__input-phone")
+
+
+const maskOptions = {
+  mask: '+{38}-({0}00)-000-00-00'
+};
+
+
+inputBoxLabelPhone.forEach(input => {
+  if (input.tagName === "INPUT") { // Проверяем, что элемент является input
+    const mask = IMask(input, maskOptions);
+  }
+});
+
+const headerBurger = document.querySelector(".header__burger span")
+let headerNav = document.querySelector(".header__nav")
+let headerList = document.querySelector(".header__list")
+
+headerBurger.addEventListener("click", function(){
+  let headerNav = document.querySelector(".header__nav")
+  let headerList = document.querySelector(".header__list")
+  headerNav.classList.toggle("header__nav-active")
+  headerList.classList.toggle("header__list-active")
+})
+
+/* const headerLinkHover = document.querySelector(".header__link__hover")
+headerLinkHover.addEventListener("mouseover", function(){
+    header.classList.add("header_hover")
+}) */
+
+/* headerLinkHover.addEventListener("mouseleave", function(){
+  let headerItemUl = document.querySelector(".header__item > ul") 
+  if (headerItemUl.style.display != "block"){
+    header.classList.remove("header_hover")
+  }
+
+}) */

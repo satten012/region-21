@@ -10,16 +10,14 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 
 </head>
 
 <body>
-
-
     <header class="header ">
         <div class="container header__container">
-            <a href="#" class="header__logo"><img src="fonts/logo.svg" alt="region 21" width="76" height="111"></a>
+            <a href="#" class="header__logo"><img src="../fonts/logo.svg" alt="region 21" width="76" height="111"></a>
             <nav class="header__nav">
                 <ul class="header__list">
                     <li class="header__item"><a class="header__link " href="#">Головна</a>
@@ -28,36 +26,19 @@
                     <li class="header__item"><a class="header__link" href="#">Таблиця</a></li>
                     <li class="header__item"><a class="header__link "
                             href="http://region-21.org/documents">Документи</a></li>
-                    <!--   <li class="header__item"><a class="header__link" href="#">Команда</a></li> -->
-
-                    <li class="header__item"><!-- <a class="header__link header__link__hover" href="#"></a> -->
-                        <button class="btn btn-dark dropdown-toggle" data-bs-trigger="hover focus"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Media
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                        <!--        <ul>
-                            <li>Фото</li>
-                            <li>Видео</li>
-                        </ul> -->
-                    </li>
+                    <li class="header__item"><a class="header__link" href="#">Команда</a></li>
+                    <li class="header__item"><a class="header__link" href="#">Фото</a></li>
                     <li class="header__item"><a class="header__link" href="#partner">Партнери</a></li>
                     <li class="header__item"><a class="header__link" href="#contacts">Контакти</a></li>
                 </ul>
             </nav>
-            <div class="header__burger">
-
-                <span></span>
-            </div>
+            <div class="header__burger"><span></span></div>
         </div>
     </header>
     <div class="wrap">
         <div class="container">
-            <img class="wrap__image" src="images/header-football-man.png" alt="man with ball" width="960" height="662">
+            <img class="wrap__image" src="../images/header-football-man.png" alt="man with ball" width="960"
+                height="662">
 
             <div class="wrap__content">
                 <h1 class="wrap__title">Region <span>21</span></h1>
@@ -70,7 +51,7 @@
         </div>
     </div>
 
-    <main>
+    <main class="main">
         <section id="partnership" class="partnership">
             <div class="container">
                 <h2 class="partnership__title title">ЗАПРОШУЕМО ДО <span>СПIВПРАЦI:</span></h2>
@@ -120,11 +101,9 @@
                                 </div>
 
                                 <div class="input-box">
-                                    <label class="input-box__label input-box__label-phone partnership__form-label">Ваш
-                                        телефон</label>
-                                    <input
-                                        class="input-box__input input-box__input-1 partnership__form-input input-box__input-phone"
-                                        type="tel" placeholder="+ 38 (_ _ _) _ _ _ - _ _ - _ _" required name="phone">
+                                    <label class="input-box__label partnership__form-label">Ваш телефон</label>
+                                    <input class="input-box__input partnership__form-input" type="tel"
+                                        placeholder="+ 38 (0_ _) _ _ _ - _ _ - _ _" required name="phone">
                                 </div>
 
                                 <div class="custom-checkbox partnership__form-checkbox">
@@ -243,7 +222,7 @@
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse flush-collapseTwo"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        <ul class="flush-collapseTwoNav">
+                                        <ul>
                                             <li>︎реєструйтеся як <span>вільний гравець</span> якщо Ви хочете зіграти на
                                                 турнірі, але
                                                 у Вас немає команди . Виберіть свою улюблену позицію на полі й наші
@@ -431,10 +410,7 @@
                     <div class="map__inner">
                         <h3 class="map__inner-title">Найближчі турніри:</h3>
                         <ul class="map__inner-schedule">
-                            <li class="map__inner-item">20.06.23 - м.Харків, вул. Тракторобудівників 55</li>
-                            <li class="map__inner-item">21.09.23 - м.Харків, вул. Тракторобудівників 55</li>
-                            <!--                         <li class="map__inner-item">07.07.23 - м.Вінниця, вул. Хлібна 1;</li> -->
-                            <!-- <li class="map__inner-item">09.08.23 - м.Львів, вул Гната Хоткевича, 48;</li>
+                            <li class="map__inner-item">20.06.23 - м.Київ, бульвар Ігоря Шамо, 12-а;</li>
                             <li class="map__inner-item">07.07.23 - м.Вінниця, вул. Хлібна 1;</li>
                             <li class="map__inner-item">09.08.23 - м.Львів, вул Гната Хоткевича, 48;</li>
                             <li class="map__inner-item">07.07.23 - м.Вінниця, вул. Хлібна 1;</li>
@@ -446,7 +422,9 @@
                             <li class="map__inner-item">07.07.23 - м.Вінниця, вул. Хлібна 1;</li>
                             <li class="map__inner-item">09.08.23 - м.Львів, вул Гната Хоткевича, 48;</li>
                             <li class="map__inner-item">07.07.23 - м.Вінниця, вул. Хлібна 1;</li>
-                            <li class="map__inner-item">09.08.23 - м.Львів, вул Гната Хоткевича, 48;</li> -->
+                            <li class="map__inner-item">09.08.23 - м.Львів, вул Гната Хоткевича, 48;</li>
+                            <li class="map__inner-item">07.07.23 - м.Вінниця, вул. Хлібна 1;</li>
+                            <li class="map__inner-item">09.08.23 - м.Львів, вул Гната Хоткевича, 48;</li>
                         </ul>
                     </div>
                 </div>
@@ -526,8 +504,8 @@
 
                             <div class="input-box">
                                 <label class="input-box__label contacts__form-label">Ваш телефон</label>
-                                <input class="input-box__input contacts__form-input input-box__input-phone" type="tel"
-                                    placeholder="+ 38 (_ _ _) _ _ _ - _ _ - _ _" required name="phone">
+                                <input class="input-box__input contacts__form-input" type="tel"
+                                    placeholder="+ 38 (0_ _) _ _ _ - _ _ - _ _" required name="phone">
                             </div>
 
                             <div class="custom-checkbox contacts__form-checkbox">
@@ -558,7 +536,7 @@
                 <p class="footer__item-title">Навігація</p>
                 <nav class="footer__nav">
                     <ul class="footer__list">
-                        <li class="footer__list-item"><a href="#header">Головна</a></li>
+                        <li class="footer__list-item"><a href="#">Головна</a></li>
                         <li class="footer__list-item"><a href="#partnership">Співпраця</a></li>
                         <li class="footer__list-item"><a href="#">Таблиця</a></li>
                         <li class="footer__list-item"><a href="#">Регламент</a></li>
@@ -641,10 +619,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/imask"></script>
-    <script src="js/main.js"></script>
-
-
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
