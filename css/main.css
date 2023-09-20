@@ -28,6 +28,7 @@
 }
 * {
     box-sizing: border-box
+    
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button {
     margin: 0;
@@ -41,10 +42,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block
 }
 html, body {
-    scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
 body {
-    line-height: 1
+    line-height: 1;
+    overflow-y: scroll;
 }
 ol, ul {
     list-style: none
@@ -502,6 +510,9 @@ body {
     min-height: 100vh;
     overflow: hidden
 }
+
+
+
 @media (max-width: 420px) {
     .wrap {
         padding: 135px 0 50px
@@ -1069,7 +1080,7 @@ body {
     border-right-color: #ed6703
 }
 .tournament {
-    padding: 140px 0 0;
+    padding: 140px 0 20px;
     line-height: 1.5rem
 }
 @media (max-width: 790px) {
@@ -1176,7 +1187,7 @@ body {
     }
 }
 .sponsors {
-    padding: 140px 0 0;
+    padding: 120px 0 0;
     line-height: 1.5rem;
     color: #fff;
     overflow: hidden
@@ -1268,7 +1279,8 @@ body {
     flex: 1 1 auto;
     padding: 80px 0 38px 88px;
     margin: 50px 0;
-    position: relative
+    position: relative;
+    margin-top: 0;
 }
 @media (max-width: 1100px) {
     .sponsors__flex {
@@ -1432,7 +1444,7 @@ body {
 .map__inner-schedule {
     padding-right: 20px;
     height: 340px;
-    overflow: auto;
+ /*    overflow: auto; */
     scrollbar-width: thin;
     scrollbar-color: #C95600 #ffffff
 }
@@ -1948,27 +1960,77 @@ body {
     border-radius: 0;
 }
 
-/* .header__burger .btn {
-    padding: 11px 13px;
-    margin-left: 3px;
-    margin-top: 5px;
-}
-
-.header__item > ul {
-    display: none;
+.sub-menu{
+    padding: 15px;
+    border-radius: 5px;
+    background: #181818;
+    min-width: 200px;
+    max-width: 250px;
+    transform: scale(0) translateY(100%);
+    z-index: 20;
     position: absolute;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+    color: red;
+    transition: 0.5s all ease-in-out;
+    color:black;
+    margin-top: 21px;
+    background-color: rgba(0,0,0,0.6);
+/*     background: rgba(201,86,0, 0.9);
+   background-color: rgb(34,34,34);
+   background: #1C1C1C; */
+    
 }
 
-.header__item:hover  ul {
-    display: block;
+.sub-menu-scroll{
+    background-color: #C95600;
+/*     background: rgba(201,86,0, 0.9) */
+ /*    color: black !important; */
+/*     background: #1c1c1c; */
+} 
+
+.header__item:hover > .sub-menu{
+    transform: scale(1) translateY(0);
+    transition: 0.5s all ease-in-out;
+}
+.sub-menu li{
+    padding: 10px 20px 10px 10px;
+    color: aqua;
 }
 
-.header__item:hover header{
-    height: 200px;
-    background: red;
+
+.sub-menu > li a:hover{
+    color: #ed6703  ;
+    content: "";
+    height: 2px;
+    transition: background .2s;
+    border-bottom: 2px solid #C95600;
+    padding-bottom: 5px;
 }
 
-.header_hover{
-    height: 250px;
-    background-color: aqua;
-} */
+.sub-menu.scrolled > li a:hover{
+    color: black  ;
+    content: "";
+    height: 2px;
+    transition: background .2s;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+.partners-img{
+    border-radius: 50%;
+}
+
+/* Стилизация вертикальной полосы прокрутки */
+::-webkit-scrollbar {
+    width: 0px; /* Ширина полосы прокрутки */
+}
+
+/* Стилизация "бара" (ползунка) полосы прокрутки */
+::-webkit-scrollbar-thumb {
+    background: transparent; /* Цвет бара */
+}
+
+/* Стилизация полосы прокрутки при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Цвет бара при наведении */
+}

@@ -2,48 +2,59 @@
 <html lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DS99SPXSTQ"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Region 21</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="../css/main.css">
-
 </head>
 
 <body>
     <header class="header header-dark">
         <div class="container header__container">
-            <a href="#" class="header__logo"><img src="../fonts/logo.svg" alt="region 21" width="76" height="111"></a>
+            <a href="#" class="header__logo"><img src="images/logo.svg" alt="region 21" width="76" height="111"></a>
             <nav class="header__nav">
                 <ul class="header__list">
-                    <li class="header__item"><a class="header__link " href="#">Головна</a>
-                    </li>
-                    <li class="header__item"><a class="header__link" href="#partnership">Співпраця</a></li>
+                    <li class="header__item"><a class="header__link  " href="http://region-21.org">Головна</a></li>
+                    <li class="header__item"><a class="header__link" href="#">Співпраця</a></li>
                     <li class="header__item"><a class="header__link" href="#">Таблиця</a></li>
-                    <li class="header__item"><a class="header__link "
+                    <li class="header__item"><a class="header__link active"
                             href="http://region-21.org/documents">Документи</a></li>
                     <li class="header__item"><a class="header__link" href="#">Команда</a></li>
                     <li class="header__item"><a class="header__link" href="#">Фото</a></li>
-                    <li class="header__item"><a class="header__link" href="#partner">Партнери</a></li>
-                    <li class="header__item"><a class="header__link" href="#contacts">Контакти</a></li>
+                    <li class="header__item"><a class="header__link" href="#">Партнери</a></li>
+                    <li class="header__item"><a class="header__link" href="#">Контакти</a></li>
                 </ul>
             </nav>
             <div class="header__burger"><span></span></div>
         </div>
     </header>
+
     <main>
         <section class="documents">
-
+            <div class="container">
+                <ul>
+                    <li class="documents__list-item"><a class="link documents__list-link" target="_blank"
+                            href="https://drive.google.com/file/d/1jMLkEnhB-u2lIoOjQYUHBeN17WscevOU/view?usp=drivesdk">Шаблон:
+                            Картка команди/гравця</a></li>
+                    <li class="documents__list-item"><a class="link documents__list-link" target="_blank"
+                            href="https://drive.google.com/file/d/13eePCpVJMf1PbKOJBBqQ7PRW30uUeBHW/view">Шаблон:
+                            Протокол матчу 8х8</a></li>
+                    <li class="documents__list-item"><a class="link documents__list-link" target="_blank"
+                            href="https://drive.google.com/file/d/12B5z8Dev_SwJJrIpSfXjflquB-JRWcig/view">Заявковий
+                            лист</a></li>
+                    <li class="documents__list-item"><a class="link documents__list-link" target="_blank"
+                            href="http://region-21.org/storage/reglament.docx">Регламент турнiру</a></li>
+                    <li class="documents__list-item"><a class="link documents__list-link" target="_blank"
+                            href="http://region-21.org/storage/protocol8*8.pdf">Регламент футболу 8х8</a></li>
+                </ul>
+            </div>
         </section>
     </main>
+
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__item">
-                <a href="#" class="footer__logo"><img src="fonts/logo.svg" alt="footer logo" width="76"
+                <a href="#" class="footer__logo"><img src="images/logo.svg" alt="footer logo" width="76"
                         height="111"></a>
             </div>
             <div class="footer__item">
@@ -51,13 +62,13 @@
                 <nav class="footer__nav">
                     <ul class="footer__list">
                         <li class="footer__list-item"><a href="#">Головна</a></li>
-                        <li class="footer__list-item"><a href="#partnership">Співпраця</a></li>
+                        <li class="footer__list-item"><a href="#">Співпраця</a></li>
                         <li class="footer__list-item"><a href="#">Таблиця</a></li>
                         <li class="footer__list-item"><a href="#">Регламент</a></li>
                         <li class="footer__list-item"><a href="#">Команда</a></li>
                         <li class="footer__list-item"><a href="#">Фото</a></li>
-                        <li class="footer__list-item"><a href="#partner">Партнери</a></li>
-                        <li class="footer__list-item"><a href="#contacts">Контакти</a></li>
+                        <li class="footer__list-item"><a href="#">Партнери</a></li>
+                        <li class="footer__list-item"><a href="#">Контакти</a></li>
                     </ul>
                 </nav>
             </div>
@@ -66,7 +77,7 @@
                 <ul class="footer__contacts">
                     <li class="footer__contacts-item">
                         <svg>
-                            <use href="fonts/sprite.svg#phone" />
+                            <use href="images/sprite.svg#phone"></use>
                         </svg>
                         <a class="footer__contacts-link" href="tel:+380960020004">+38 (096) 00-20-004</a>
                     </li>
@@ -76,14 +87,13 @@
 
                     <li class="footer__contacts-item">
                         <svg>
-                            <use href="fonts/sprite.svg#email" />
+                            <use href="images/sprite.svg#email"></use>
                         </svg>
-                        <a class="footer__contacts-link" href="malito:manager@region-21.org"><span class="__cf_email__"
-                                data-cfemail="acc1cdc2cdcbc9deecdec9cbc5c3c2819e9d82c3decb">[email protected]</span></a>
+                        <a class="footer__contacts-link" href="malito:manager@region-21.org">manager@region-21.org</a>
                     </li>
                     <li class="footer__contacts-item">
                         <svg>
-                            <use href="fonts/sprite.svg#location" />
+                            <use href="images/sprite.svg#location"></use>
                         </svg>
                         <address class="footer__contacts-link"><span>м. Київ,</span> вул. Чистяківська, 27</address>
                     </li>
@@ -92,28 +102,28 @@
                     <li class="footer__icons-item">
                         <a href="#">
                             <svg>
-                                <use href="fonts/sprite.svg#instagram" />
+                                <use href="images/sprite.svg#instagram"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="footer__icons-item">
                         <a href="#">
                             <svg>
-                                <use href="fonts/sprite.svg#telegram" />
+                                <use href="images/sprite.svg#telegram"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="footer__icons-item">
                         <a href="#">
                             <svg>
-                                <use href="fonts/sprite.svg#viber" />
+                                <use href="images/sprite.svg#viber"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="footer__icons-item">
                         <a href="#">
                             <svg>
-                                <use href="fonts/sprite.svg#facebook" />
+                                <use href="images/sprite.svg#facebook"></use>
                             </svg>
                         </a>
                     </li>
@@ -123,19 +133,8 @@
         <div class="container">
             <p class="footer__reserved">© 2023 | Усі права захищені</p>
         </div>
-
-
-
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-    <script src="../js/main.js"></script>
 </body>
 
 </html>
