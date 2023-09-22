@@ -347,8 +347,14 @@ body {
 .header__link.active:before {
     background: #fff
 }
+
+.header__item{
+    transition: all .2s;
+}
+
 .header__link:hover {
-    color: #ed6703
+    color: #ed6703;
+    transition: all .2s;
 }
 .header__link:hover:before {
     background: #ED6703
@@ -1366,13 +1372,14 @@ body {
 }
 .partner__card {
     box-shadow: 0 8px 12px #00000014;
-    flex: 1 1 30%;
+    flex: 30%;
     min-height: 210px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #fff;
-    padding: 15px 35px
+    padding: 15px 35px;
+  
 }
 @media (max-width: 790px) {
     .partner__card {
@@ -1381,7 +1388,7 @@ body {
 }
 .partner__card img {
     object-fit: contain;
-    max-height: 210px;
+    max-height: 180px;
     min-width: 150px
 }
 @media (max-width: 790px) {
@@ -1973,7 +1980,7 @@ body {
     color: red;
     transition: 0.5s all ease-in-out;
     color:black;
-    margin-top: 21px;
+    margin-top: 44px;
     background-color: rgba(0,0,0,0.6);
 /*     background: rgba(201,86,0, 0.9);
    background-color: rgb(34,34,34);
@@ -2033,4 +2040,98 @@ body {
 /* Стилизация полосы прокрутки при наведении */
 ::-webkit-scrollbar-thumb:hover {
     background: #888; /* Цвет бара при наведении */
+}
+
+.d-flex div{
+    color: white;
+}
+
+.document.wrap {
+    background: linear-gradient(135deg, rgba(0, 0, 0, .7), rgba(201, 86, 0, .6) 54%), linear-gradient(112deg, rgba(0, 0, 0, .7) 39%, rgba(0, 0, 0, 0) 64%), url(../images/header-background-c83a462a.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+/*     min-height: 56vh; */
+    overflow: hidden;
+    backdrop-filter: blur(93px);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.document.wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, .7), rgba(201, 86, 0, .6) 54%), linear-gradient(112deg, rgba(0, 0, 0, .7) 39%, rgba(0, 0, 0, 0) 64%), url(../images/header-background-c83a462a.jpg);
+    filter: blur(10px); /* Примените размытие к псевдоэлементу */
+    z-index: -1; /* Чтобы псевдоэлемент был под основным содержанием */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.document.wrap > section {
+padding-top: 0;
+padding-bottom: 0;
+}
+
+.tournament h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+}
+
+
+.header__item__dot{
+    transform: rotate(90deg);
+    margin-left: 8px;
+    font-size: 24px;
+   transition: transform .2s;
+
+}
+
+.header__item__dot:hover{
+    transform: rotate(270deg);
+
+}
+
+.header__link:hover .header__item__dot{
+    transform: rotate(270deg);
+}
+
+.header__item{
+    display: flex;
+/*     justify-content: ; */
+}
+
+.accordion-body  p {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.accordion-body  li{
+    position: relative;
+}
+
+.accordion-body  li::before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: #1C1C1C;
+    border-radius: 50%;
+}
+
+.partner__card a{
+    transition: all .5s;
+    position: relative;
+}
+
+.partner__card a:hover {
+    transform: scale(1.2);
+    z-index: 2;
 }
