@@ -28,6 +28,7 @@
 }
 * {
     box-sizing: border-box
+    
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button {
     margin: 0;
@@ -41,10 +42,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block
 }
 html, body {
-    scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
 body {
-    line-height: 1
+    line-height: 1;
+    overflow-y: scroll;
 }
 ol, ul {
     list-style: none
@@ -339,8 +347,14 @@ body {
 .header__link.active:before {
     background: #fff
 }
+
+.header__item{
+    transition: all .2s;
+}
+
 .header__link:hover {
-    color: #ed6703
+    color: #ed6703;
+    transition: all .2s;
 }
 .header__link:hover:before {
     background: #ED6703
@@ -435,7 +449,7 @@ body {
         width: 34px;
         height: 34px;
         position: relative;
-        z-index: 15
+        z-index: 17
     }
     .header__burger:before, .header__burger:after, .header__burger span {
         transition: transform .2s;
@@ -473,6 +487,7 @@ body {
     right:  0;
     background-color: #C95600;
     top: 0;
+    z-index: 16;
 }
 
 .header__list-active{
@@ -480,6 +495,18 @@ body {
     flex-direction: column;
 }
 
+/* body::before{
+    content: "";
+    position: fixed;
+    background-color: black;
+    height: 100%;
+    width: 100vw;
+    z-index: 10;
+    opacity: 0.8;
+    display: block;
+
+
+} */
 
 @media (max-width: 1100px) {
     .header__burger.active:before, .header__burger.active:after {
@@ -502,6 +529,9 @@ body {
     min-height: 100vh;
     overflow: hidden
 }
+
+
+
 @media (max-width: 420px) {
     .wrap {
         padding: 135px 0 50px
@@ -1069,7 +1099,7 @@ body {
     border-right-color: #ed6703
 }
 .tournament {
-    padding: 140px 0 0;
+    padding: 140px 0 20px;
     line-height: 1.5rem
 }
 @media (max-width: 790px) {
@@ -1176,7 +1206,7 @@ body {
     }
 }
 .sponsors {
-    padding: 140px 0 0;
+    padding: 120px 0 0;
     line-height: 1.5rem;
     color: #fff;
     overflow: hidden
@@ -1268,7 +1298,8 @@ body {
     flex: 1 1 auto;
     padding: 80px 0 38px 88px;
     margin: 50px 0;
-    position: relative
+    position: relative;
+    margin-top: 0;
 }
 @media (max-width: 1100px) {
     .sponsors__flex {
@@ -1354,13 +1385,14 @@ body {
 }
 .partner__card {
     box-shadow: 0 8px 12px #00000014;
-    flex: 1 1 30%;
+    flex: 30%;
     min-height: 210px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #fff;
-    padding: 15px 35px
+    padding: 15px 35px;
+  
 }
 @media (max-width: 790px) {
     .partner__card {
@@ -1369,7 +1401,7 @@ body {
 }
 .partner__card img {
     object-fit: contain;
-    max-height: 210px;
+    max-height: 180px;
     min-width: 150px
 }
 @media (max-width: 790px) {
@@ -1432,7 +1464,7 @@ body {
 .map__inner-schedule {
     padding-right: 20px;
     height: 340px;
-    overflow: auto;
+ /*    overflow: auto; */
     scrollbar-width: thin;
     scrollbar-color: #C95600 #ffffff
 }
@@ -1552,7 +1584,8 @@ body {
 }
 .contacts__social {
     display: flex;
-    gap: 24px
+    gap: 24px;
+    border-radius: 50%;
 }
 .contacts__social-item a {
     display: block;
@@ -1561,9 +1594,10 @@ body {
 .contacts__social-item a svg {
     fill: #c1c1c1;
     width: 28px;
-    height: 28px;
+    height: 28px; 
     transition: fill .2s
 }
+
 .contacts__social-item a:hover svg {
     fill: #ed6703
 }
@@ -1948,27 +1982,279 @@ body {
     border-radius: 0;
 }
 
-/* .header__burger .btn {
-    padding: 11px 13px;
-    margin-left: 3px;
-    margin-top: 5px;
-}
-
-.header__item > ul {
-    display: none;
+.sub-menu{
+    padding: 15px;
+    border-radius: 5px;
+    background: #181818;
+    min-width: 200px;
+    max-width: 250px;
+    transform: scale(0) translateY(100%);
+    z-index: 20;
     position: absolute;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+    color: red;
+    transition: 0.5s all ease-in-out;
+    color:black;
+    margin-top: 44px;
+    background-color: rgba(0,0,0,0.6);
+/*     background: rgba(201,86,0, 0.9);
+   background-color: rgb(34,34,34);
+   background: #1C1C1C; */
+    
 }
 
-.header__item:hover  ul {
-    display: block;
+.sub-menu-scroll{
+    background-color: #C95600;
+/*     background: rgba(201,86,0, 0.9) */
+ /*    color: black !important; */
+/*     background: #1c1c1c; */
+} 
+
+.header__item:hover > .sub-menu{
+    transform: scale(1) translateY(0);
+    transition: 0.5s all ease-in-out;
+}
+.sub-menu li{
+    padding: 10px 20px 10px 10px;
+    color: aqua;
 }
 
-.header__item:hover header{
-    height: 200px;
-    background: red;
+
+.sub-menu > li a:hover{
+    color: #ed6703  ;
+    content: "";
+    height: 2px;
+    transition: background .2s;
+    border-bottom: 2px solid #C95600;
+    padding-bottom: 5px;
 }
 
-.header_hover{
-    height: 250px;
-    background-color: aqua;
-} */
+.sub-menu.scrolled > li a:hover{
+    color: black  ;
+    content: "";
+    height: 2px;
+    transition: background .2s;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+.partners-img{
+    border-radius: 50%;
+}
+
+/* Стилизация вертикальной полосы прокрутки */
+::-webkit-scrollbar {
+    width: 0px; /* Ширина полосы прокрутки */
+}
+
+/* Стилизация "бара" (ползунка) полосы прокрутки */
+::-webkit-scrollbar-thumb {
+    background: transparent; /* Цвет бара */
+}
+
+/* Стилизация полосы прокрутки при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Цвет бара при наведении */
+}
+
+.d-flex div{
+    color: white;
+}
+
+.document.wrap {
+    background: linear-gradient(135deg, rgba(0, 0, 0, .7), rgba(201, 86, 0, .6) 54%), linear-gradient(112deg, rgba(0, 0, 0, .7) 39%, rgba(0, 0, 0, 0) 64%), url(../images/header-background-c83a462a.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+/*     min-height: 56vh; */
+    overflow: hidden;
+    backdrop-filter: blur(93px);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.document.wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, .7), rgba(201, 86, 0, .6) 54%), linear-gradient(112deg, rgba(0, 0, 0, .7) 39%, rgba(0, 0, 0, 0) 64%), url(../images/header-background-c83a462a.jpg);
+    filter: blur(10px); /* Примените размытие к псевдоэлементу */
+    z-index: -1; /* Чтобы псевдоэлемент был под основным содержанием */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.document.wrap > section {
+padding-top: 0;
+padding-bottom: 0;
+}
+
+.tournament h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+}
+
+
+.header__item__dot{
+    transform: rotate(90deg);
+    margin-left: 8px;
+    font-size: 24px;
+   transition: transform .2s;
+
+}
+
+.header__item__dot:hover{
+    transform: rotate(270deg);
+
+}
+
+.header__link:hover .header__item__dot{
+    transform: rotate(270deg);
+}
+
+.header__item{
+    display: flex;
+/*     justify-content: ; */
+}
+
+.accordion-body  p {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.accordion-body  li{
+    position: relative;
+}
+
+.accordion-body  li::before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: #1C1C1C;
+    border-radius: 50%;
+}
+
+.partner__card a{
+    transition: all .5s;
+    position: relative;
+}
+
+.partner__card a:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+@media (max-width: 1100px) {
+    .partnership,.about, .about-lists, .tournament, .sponsors {
+        padding-top: 120px;
+    }
+
+    .about, .partner, .map, .contacts {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .about-lists{
+        padding: 60px;
+    }
+    
+    .sponsors__flex {
+        margin: 0;
+        padding: 0 0 40px;
+        padding: 0 60px 40px;
+    }
+
+    .header__item__dot{
+        font-size: 20px;
+    }
+
+    .contacts__container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contacts__inner{
+        width: 100%;
+        margin-top: 40px;
+        padding-bottom: 25px;
+        max-width: 100%;
+    }
+
+    .contacts__addres{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .contacts__list{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 10px; 
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px){
+    .header__item__dot {
+        font-size: 18px;
+    }
+    .partnership,.about, .about-lists, .tournament, .sponsors {
+        padding-top: 80px;
+    }
+
+    .about, .partner, .map, .contacts {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 823px){
+.footer__container > .footer__item:nth-child(1){
+        display: none;
+    }
+  .contacts{
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 790px){
+    .footer__container > .footer__item:nth-child(1){
+            display: block;
+        }
+
+        .partnership,.about, .about-lists, .tournament, .sponsors {
+            padding-top: 60px;
+        }
+    
+        .about, .partner, .map, .contacts {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .partner__card img {
+            height: 110px;
+            width: auto;
+            min-width: auto;
+        }
+}
+
+@media (max-width: 641px){
+    .footer__container > .footer__item:nth-child(1){
+            display: none;
+        }
+}
+
+@media (max-width: 641px){
+    .partner__card img {
+   /*      h */
+    }
+}

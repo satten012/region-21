@@ -4,15 +4,21 @@ let lastScrollTop = 0;
 /* hide/show header */
 window.addEventListener("scroll", function() {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Текущая позиция скролла
-  
+  let subMenu = document.querySelector(".sub-menu")
+  const subMenuLinks = document.querySelectorAll('.sub-menu > li > a');
   if (scrollTop == 0) {
     header.classList.remove("active");
-  } else {
+    subMenu.classList.remove("sub-menu-scroll");
+    subMenu.classList.remove('scrolled');
+  } 
+  else {
     header.classList.add("active");
-  }
-
+    subMenu.classList.add("sub-menu-scroll");
+    subMenu.classList.add('scrolled');
+  
   lastScrollTop = scrollTop; 
-});
+  }
+});    
 
 /* добавление атрибута checked в инпут */
 
@@ -75,22 +81,49 @@ const headerBurger = document.querySelector(".header__burger span")
 let headerNav = document.querySelector(".header__nav")
 let headerList = document.querySelector(".header__list")
 
+// Создаем новый стиль элемента style
+var styleElement = document.createElement("style");
+
+// Задаем содержимое стиля
+styleElement.innerHTML = `
+  body::before {
+    content: "";
+    position: fixed;
+    background-color: black;
+    height: 100%;
+    width: 100vw;
+    z-index: 10;
+    opacity: 0.8;
+
+  }
+`;
+
+// Добавляем стиль к заголовку документа (head)
+document.head.appendChild(styleElement);
+
+
 headerBurger.addEventListener("click", function(){
   let headerNav = document.querySelector(".header__nav")
   let headerList = document.querySelector(".header__list")
+
   headerNav.classList.toggle("header__nav-active")
   headerList.classList.toggle("header__list-active")
+  pseudoElement.style.left = "0"
+  
 })
 
-/* const headerLinkHover = document.querySelector(".header__link__hover")
-headerLinkHover.addEventListener("mouseover", function(){
-    header.classList.add("header_hover")
-}) */
+/* hide/show header (width) */
 
-/* headerLinkHover.addEventListener("mouseleave", function(){
-  let headerItemUl = document.querySelector(".header__item > ul") 
-  if (headerItemUl.style.display != "block"){
-    header.classList.remove("header_hover")
+// Функция, которая будет выполняться при изменении размера окна
+function handleResize() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >768){
+    headerNav.classList.remove("header__nav-active")
+    headerList.classList.remove("header__list-active")
   }
+}
+window.addEventListener("resize", handleResize);
+handleResize();
 
-}) */
+
