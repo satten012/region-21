@@ -18,7 +18,15 @@ window.addEventListener("scroll", function() {
   
   lastScrollTop = scrollTop; 
   }
+<<<<<<< HEAD
 });    
+=======
+});
+    
+  
+
+
+>>>>>>> f03b572a6f35ae23b71d570b52c62d68b590f25b
 
 /* добавление атрибута checked в инпут */
 
@@ -81,6 +89,7 @@ const headerBurger = document.querySelector(".header__burger span")
 let headerNav = document.querySelector(".header__nav")
 let headerList = document.querySelector(".header__list")
 
+<<<<<<< HEAD
 // Создаем новый стиль элемента style
 var styleElement = document.createElement("style");
 
@@ -126,4 +135,13 @@ function handleResize() {
 window.addEventListener("resize", handleResize);
 handleResize();
 
+=======
+headerBurger.addEventListener("click", function(){
+  let headerNav = document.querySelector(".header__nav")
+  let headerList = document.querySelector(".header__list")
+  headerNav.classList.toggle("header__nav-active")
+  headerList.classList.toggle("header__list-active")
+})
+
+>>>>>>> f03b572a6f35ae23b71d570b52c62d68b590f25b
 
