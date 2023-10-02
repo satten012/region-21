@@ -1,4 +1,5 @@
 const header = document.querySelector(".header")
+const body = document.querySelector("body")
 let lastScrollTop = 0; 
 
 /* hide/show header */
@@ -18,15 +19,9 @@ window.addEventListener("scroll", function() {
   
   lastScrollTop = scrollTop; 
   }
-<<<<<<< HEAD
+
 });    
-=======
-});
-    
-  
 
-
->>>>>>> f03b572a6f35ae23b71d570b52c62d68b590f25b
 
 /* добавление атрибута checked в инпут */
 
@@ -85,16 +80,178 @@ inputBoxLabelPhone.forEach(input => {
   }
 });
 
-const headerBurger = document.querySelector(".header__burger span")
+
+/* -------------------- */
+const headerBurger = document.querySelector(".header__burger")
 let headerNav = document.querySelector(".header__nav")
 let headerList = document.querySelector(".header__list")
 
-<<<<<<< HEAD
-// Создаем новый стиль элемента style
-var styleElement = document.createElement("style");
+ headerBurger.addEventListener("click", function(e){
+  e.stopPropagation()
 
-// Задаем содержимое стиля
-styleElement.innerHTML = `
+
+  function showHideMenu (){
+  if (window.innerWidth < 768 && window.innerHeight < 600) {
+    headerNav.style.overflowY = 'scroll'
+  }
+
+  const headerNav = document.querySelector(".header__nav ") 
+  headerNav.addEventListener("click", function(e){
+    e.stopPropagation()
+  })
+
+  headerNav.classList.toggle("header__nav-active")
+  headerList.classList.toggle("header__list-active")
+  let styleElement = document.createElement("style");
+  const headerLogoImg = document.querySelector(".header__logo img")
+  const headerBurger = document.querySelector(".header__burger")
+  headerBurger.classList.toggle("active")
+  headerBurger.classList.toggle("show")
+  if (headerNav.classList.toggle("show")){
+    body.style.overflow = "hidden"
+  styleElement.innerHTML = `
+    body::before {
+    content: "";
+    position: fixed;
+    background-color: black;
+    height: 100%;
+    width: 100vw;
+    z-index: 10;
+    opacity: 0.8;
+    transition:all 0s;
+    display:block;
+    right:0;
+    z-index:9
+    }`;
+  document.head.appendChild(styleElement);
+  headerLogoImg.style.opacity = "0.4"
+  body.style.position = "static"
+  headerLogoImg.style.transition = "all 0s"
+  }
+
+  else{
+
+    body.style.overflow = "inherit"
+    styleElement.innerHTML = `
+    body::before {
+    content: "";
+    transition:all 1s;
+    opacity:0;
+    z-index:-1;
+  }
+`
+  document.head.appendChild(styleElement);
+  headerLogoImg.style.opacity = "1"
+  headerLogoImg.style.transition = "all 1s"
+  body.style.position ="static"
+  }
+
+
+  const headerItem = document.querySelectorAll (".header__item")
+  headerItem.forEach((elem, index) => {
+
+  elem.addEventListener("click", function(){
+    if(index != 4){
+    headerNav.classList.remove("header__nav-active")
+    headerList.classList.remove("header__list-active")
+    let styleElement = document.createElement("style");
+    const headerLogoImg = document.querySelector(".header__logo img")
+    const headerBurger = document.querySelector(".header__burger")
+    headerBurger.classList.remove("active")
+    headerBurger.classList.remove("show")
+          if (headerNav.classList.remove("show")){
+            body.style.overflow = "hidden";
+          styleElement.innerHTML = `
+          body::before {
+            content: "";
+            position: fixed;
+            background-color: black;
+            height: 100%;
+            width: 100vw;
+            z-index: 10;
+            opacity: 0.8;
+            transition:all 0s;
+            display:block;
+            right:0;
+            z-index:9
+            }`;
+          document.head.appendChild(styleElement);
+          headerLogoImg.style.opacity = "0.4"
+          body.style.position = "static"
+          headerLogoImg.style.transition = "all 0s"
+          }
+        
+          else{
+            body.style.overflow = "inherit"
+            styleElement.innerHTML = `
+            body::before {
+            content: "";
+            transition:all 1s;
+            opacity:0;
+            z-index:-1;
+          }
+        `
+          document.head.appendChild(styleElement);
+          headerLogoImg.style.opacity = "1"
+          headerLogoImg.style.transition = "all 1s"
+          body.style.position ="static"
+          }
+  }
+  else{
+    this.classList.add("submenuSmall")
+    console.log(this.children[1])
+    this.children[1].classList.add("submenuSmall")
+
+    
+  }
+})
+
+
+  })
+
+  }
+
+  showHideMenu()
+
+  
+
+  
+})
+
+
+
+
+/* ---------------------------- */
+
+/* hide/show header (width) */
+
+// Функция, которая будет выполняться при изменении размера окна
+function handleResize() {
+  const screenWidth = window.innerWidth;
+  const headerLogoImg = document.querySelector(".header__logo img")
+  let styleElement = document.createElement("style");
+  if (screenWidth >768){
+    headerNav.classList.remove("header__nav-active")
+    headerList.classList.remove("header__list-active")
+    headerBurger.classList.remove("show")
+    headerBurger.classList.remove("active")
+    body.style.overflow = "inherit"
+            styleElement.innerHTML = `
+            body::before {
+            content: "";
+            transition:all 1s;
+            opacity:0;
+            z-index:-1;
+          }
+        `
+          document.head.appendChild(styleElement);
+          headerLogoImg.style.opacity = "1"
+          headerLogoImg.style.transition = "all 1s"
+          body.style.position ="static"
+  }
+  if (headerNav.classList.remove("show")){
+    body.style.overflow = "hidden";
+  styleElement.innerHTML = `
   body::before {
     content: "";
     position: fixed;
@@ -103,45 +260,26 @@ styleElement.innerHTML = `
     width: 100vw;
     z-index: 10;
     opacity: 0.8;
-
+    transition:all 0s;
+    display:block;
+    right:0;
+    z-index:9
+    }`;
+  document.head.appendChild(styleElement);
+  headerLogoImg.style.opacity = "0.4"
+  body.style.position = "static"
+  headerLogoImg.style.transition = "all 0s"
   }
-`;
-
-// Добавляем стиль к заголовку документа (head)
-document.head.appendChild(styleElement);
 
 
-headerBurger.addEventListener("click", function(){
-  let headerNav = document.querySelector(".header__nav")
-  let headerList = document.querySelector(".header__list")
-
-  headerNav.classList.toggle("header__nav-active")
-  headerList.classList.toggle("header__list-active")
-  pseudoElement.style.left = "0"
-  
-})
-
-/* hide/show header (width) */
-
-// Функция, которая будет выполняться при изменении размера окна
-function handleResize() {
-  const screenWidth = window.innerWidth;
-
-  if (screenWidth >768){
-    headerNav.classList.remove("header__nav-active")
-    headerList.classList.remove("header__list-active")
-  }
 }
 window.addEventListener("resize", handleResize);
 handleResize();
 
-=======
-headerBurger.addEventListener("click", function(){
-  let headerNav = document.querySelector(".header__nav")
-  let headerList = document.querySelector(".header__list")
-  headerNav.classList.toggle("header__nav-active")
-  headerList.classList.toggle("header__list-active")
-})
 
->>>>>>> f03b572a6f35ae23b71d570b52c62d68b590f25b
+
+
+/* ---- */
+
+// Функция для плавной прокрутки к элементу
 
