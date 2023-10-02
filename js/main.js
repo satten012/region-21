@@ -1,5 +1,6 @@
 const header = document.querySelector(".header")
 const body = document.querySelector("body")
+const headerItemMedia = document.querySelector(".header__itemMedia")
 let lastScrollTop = 0; 
 
 /* hide/show header */
@@ -21,6 +22,7 @@ window.addEventListener("scroll", function() {
   }
 
 });    
+
 
 
 /* добавление атрибута checked в инпут */
@@ -95,7 +97,6 @@ let headerList = document.querySelector(".header__list")
     headerNav.style.overflowY = 'scroll'
   }
 
-  const headerNav = document.querySelector(".header__nav ") 
   headerNav.addEventListener("click", function(e){
     e.stopPropagation()
   })
@@ -198,10 +199,10 @@ let headerList = document.querySelector(".header__list")
           }
   }
   else{
-    this.classList.add("submenuSmall")
+/*     this.classList.remove("submenuSmall")
     console.log(this.children[1])
-    this.children[1].classList.add("submenuSmall")
-
+    this.children[1].classList.remove("submenuSmall")
+ */
     
   }
 })
@@ -276,6 +277,25 @@ function handleResize() {
 window.addEventListener("resize", handleResize);
 handleResize();
 
+let isMenuVisible = false;
+headerItemMedia.addEventListener("click", function(){
+  if (window.innerWidth < 768 && isMenuVisible == false) {
+    headerItemMedia.children[1].style.display = "block"
+    headerItemMedia.nextElementSibling.style.marginBlockStart = "63px"
+    isMenuVisible = true;
+    headerItemMedia.nextElementSibling.style.transition = "all 0s"
+    headerItemMedia.children[0].style.transform = "rotate(270deg)"
+    headerItemMedia.style.color = "#ed6703"
+  }
+  else if (window.innerWidth < 768){
+    headerItemMedia.children[1].style.display = "none"
+    headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
+    headerItemMedia.style.color = "white"
+    headerItemMedia.nextElementSibling.style.transition = "all 0s"
+    headerItemMedia.children[0].style.transform = "rotate(90deg)"
+    isMenuVisible = false;
+  }
+})
 
 
 
