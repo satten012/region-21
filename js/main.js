@@ -227,6 +227,7 @@ let headerList = document.querySelector(".header__list")
 /* hide/show header (width) */
 
 // Функция, которая будет выполняться при изменении размера окна
+let isMenuVisible = false;
 function handleResize() {
   const screenWidth = window.innerWidth;
   const headerLogoImg = document.querySelector(".header__logo img")
@@ -249,7 +250,24 @@ function handleResize() {
           headerLogoImg.style.opacity = "1"
           headerLogoImg.style.transition = "all 1s"
           body.style.position ="static"
+
+          /* -----00 */
+          headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
+          headerItemMedia.children[0].style.transform = "rotate(90deg)"
+/* 
+    headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
+    headerItemMedia.nextElementSibling.style.transition = "all 0s"
+    headerItemMedia.children[0].style.transform = "rotate(90deg)" */
   }
+
+
+  /* TYT !!!sa */
+/*   if (screenWidth <=768){
+    headerItemMedia.children[1].style.display = "none"
+    headerItemMedia.style.color = "white"
+    isMenuVisible = false; 
+  } */
+
   if (headerNav.classList.remove("show")){
     body.style.overflow = "hidden";
   styleElement.innerHTML = `
@@ -277,9 +295,9 @@ function handleResize() {
 window.addEventListener("resize", handleResize);
 handleResize();
 
-let isMenuVisible = false;
+
 headerItemMedia.addEventListener("click", function(){
-  if (window.innerWidth < 768 && isMenuVisible == false) {
+  if (window.innerWidth < 769 && isMenuVisible == false) {
     headerItemMedia.children[1].style.display = "block"
     headerItemMedia.nextElementSibling.style.marginBlockStart = "63px"
     isMenuVisible = true;
@@ -287,7 +305,7 @@ headerItemMedia.addEventListener("click", function(){
     headerItemMedia.children[0].style.transform = "rotate(270deg)"
     headerItemMedia.style.color = "#ed6703"
   }
-  else if (window.innerWidth < 768){
+  else if (window.innerWidth < 769){
     headerItemMedia.children[1].style.display = "none"
     headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
     headerItemMedia.style.color = "white"
