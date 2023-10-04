@@ -23,10 +23,7 @@ window.addEventListener("scroll", function() {
 
 });    
 
-
-
 /* добавление атрибута checked в инпут */
-
 const confidentiality = document.querySelector("#confidentiality")
 const agree = document.querySelector("#agree")
 confidentiality.addEventListener("click", function(){
@@ -39,12 +36,9 @@ confidentiality.addEventListener("click", function(){
 })
 
 /* убрать перезагрузку страницы */
-
 document.addEventListener("DOMContentLoaded", function () {
   let formSecond = document.getElementById("form-2");
   let formFirst = document.getElementById("form-1")
-
-
   function blockPage(elem){
     elem.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -67,14 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* mask phone */
-
 const inputBoxLabelPhone = document.querySelectorAll(".input-box__input-phone")
-
-
 const maskOptions = {
   mask: '+{38}-({0}00)-000-00-00'
 };
-
 
 inputBoxLabelPhone.forEach(input => {
   if (input.tagName === "INPUT") { // Проверяем, что элемент является input
@@ -82,8 +72,6 @@ inputBoxLabelPhone.forEach(input => {
   }
 });
 
-
-/* -------------------- */
 const headerBurger = document.querySelector(".header__burger")
 let headerNav = document.querySelector(".header__nav")
 let headerList = document.querySelector(".header__list")
@@ -91,11 +79,10 @@ let headerList = document.querySelector(".header__list")
  headerBurger.addEventListener("click", function(e){
   e.stopPropagation()
 
-
   function showHideMenu (){
-  if (window.innerWidth < 768 && window.innerHeight < 600) {
-    headerNav.style.overflowY = 'scroll'
-  }
+    if (window.innerWidth < 768 && window.innerHeight < 600) {
+      headerNav.style.overflowY = 'scroll'
+    }
 
   headerNav.addEventListener("click", function(e){
     e.stopPropagation()
@@ -198,28 +185,14 @@ let headerList = document.querySelector(".header__list")
           body.style.position ="static"
           }
   }
-  else{
-/*     this.classList.remove("submenuSmall")
-    console.log(this.children[1])
-    this.children[1].classList.remove("submenuSmall")
- */
-    
-  }
 })
-
-
   })
 
   }
 
   showHideMenu()
-
-  
-
   
 })
-
-
 
 
 /* ---------------------------- */
@@ -250,23 +223,33 @@ function handleResize() {
           headerLogoImg.style.opacity = "1"
           headerLogoImg.style.transition = "all 1s"
           body.style.position ="static"
-
-          /* -----00 */
+          headerItemMedia.style.color = ""
+          headerItemMedia.children[0].style.transform = ""
           headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
-          headerItemMedia.children[0].style.transform = "rotate(90deg)"
-/* 
-    headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
-    headerItemMedia.nextElementSibling.style.transition = "all 0s"
-    headerItemMedia.children[0].style.transform = "rotate(90deg)" */
   }
+/* ффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф */
+  else if (headerItemMedia.nextElementSibling.style.marginBlockStart == "0px"){
+    headerItemMedia.children[1].style.display = ""
+    isMenuVisible = false;
+    
+    if (window.innerWidth < 769){
+      headerItemMedia.children[1].style.display = "none"
+      headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
+      headerItemMedia.style.color = "white"
+      headerItemMedia.nextElementSibling.style.transition = "all 0s"
+      headerItemMedia.children[0].style.transform = "rotate(90deg)"
+      isMenuVisible = false;
+    }
+    else{
+      headerItemMedia.children[0].style.transform = ""
+      
+    }
 
-
-  /* TYT !!!sa */
-/*   if (screenWidth <=768){
-    headerItemMedia.children[1].style.display = "none"
-    headerItemMedia.style.color = "white"
-    isMenuVisible = false; 
-  } */
+  }
+  else{
+/*     headerItemMedia.style.color = "blue" */
+ /*    headerNav.style.overflowY = 'scroll' */
+  }
 
   if (headerNav.classList.remove("show")){
     body.style.overflow = "hidden";
@@ -316,8 +299,4 @@ headerItemMedia.addEventListener("click", function(){
 })
 
 
-
-/* ---- */
-
-// Функция для плавной прокрутки к элементу
 
