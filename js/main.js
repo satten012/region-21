@@ -211,6 +211,7 @@ function handleResize() {
     headerBurger.classList.remove("show")
     headerBurger.classList.remove("active")
     body.style.overflow = "inherit"
+    headerItemMedia.style.color = ""
             styleElement.innerHTML = `
             body::before {
             content: "";
@@ -223,9 +224,32 @@ function handleResize() {
           headerLogoImg.style.opacity = "1"
           headerLogoImg.style.transition = "all 1s"
           body.style.position ="static"
-          headerItemMedia.style.color = ""
+          
           headerItemMedia.children[0].style.transform = ""
           headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
+
+          headerItemMedia.children[0].style.transform = "";
+          headerItemMedia.children[1].style.opacity = "0"
+          headerItemMedia.children[1].style.transform = "scale(0) translateY(0)"
+
+         
+          
+          /* aaaaaaaaaaaa */
+          
+
+
+
+
+      if (headerItemMedia.children[1].style.display =="none" || headerItemMedia.children[1].style.display ==""){
+        headerItemMedia.style.color = "white"
+        headerItemMedia.children[0].style.transform = "rotate(90deg)"
+/*         headerItemMedia.children[1].style.opacity = "0"
+        headerItemMedia.children[1].style.display = ""; */
+     
+      }
+      headerItemMedia.children[1].style.display = ""
+  /*     headerItemMedia.children[1].style.display = ""; */
+      
   }
 /* ффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф */
   else if (headerItemMedia.nextElementSibling.style.marginBlockStart == "0px"){
@@ -281,20 +305,48 @@ handleResize();
 
 headerItemMedia.addEventListener("click", function(){
   if (window.innerWidth < 769 && isMenuVisible == false) {
-    headerItemMedia.children[1].style.display = "block"
-    headerItemMedia.nextElementSibling.style.marginBlockStart = "63px"
+    headerItemMedia.children[1].style.display = "block";
+    headerItemMedia.nextElementSibling.style.marginBlockStart = "63px";
     isMenuVisible = true;
-    headerItemMedia.nextElementSibling.style.transition = "all 0s"
-    headerItemMedia.children[0].style.transform = "rotate(270deg)"
-    headerItemMedia.style.color = "#ed6703"
+    headerItemMedia.nextElementSibling.style.transition = "all 0s";
+    headerItemMedia.children[0].style.transform = "rotate(270deg)";
+    headerItemMedia.style.color = "#ed6703";
+    headerItemMedia.children[1].style.opacity = "1"
+    headerItemMedia.children[1].style.transform = "scale(1) translateY(0)"
+ 
   }
   else if (window.innerWidth < 769){
-    headerItemMedia.children[1].style.display = "none"
-    headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
-    headerItemMedia.style.color = "white"
-    headerItemMedia.nextElementSibling.style.transition = "all 0s"
-    headerItemMedia.children[0].style.transform = "rotate(90deg)"
+    headerItemMedia.children[1].style.opacity = "1"
+    headerItemMedia.children[1].style.display = "none";
+    headerItemMedia.nextElementSibling.style.marginBlockStart = "0px";
+    headerItemMedia.style.color = "white";
+    headerItemMedia.nextElementSibling.style.transition = "all 0s";
+    headerItemMedia.children[0].style.transform = "rotate(90deg)";
+    headerItemMedia.children[1].style.transform = "scale(1) translateY(0)"
     isMenuVisible = false;
+  }
+  else {
+    headerItemMedia.children[1].style.display = "";
+  headerItemMedia.nextElementSibling.style.marginBlockStart = "";
+  headerItemMedia.style.color = "";
+  headerItemMedia.nextElementSibling.style.transition = "all .3s";
+  headerItemMedia.children[0].style.transform = "";
+  headerItemMedia.children[1].style.opacity = "1"
+  headerItemMedia.children[1].style.transform = "scale(1) translateY(0)"
+  isMenuVisible = false;
+  }
+})
+
+
+headerItemMedia.addEventListener("mouseover", function(){
+  if (window.innerWidth > 769){
+  headerItemMedia.children[1].style.display = "";
+  headerItemMedia.nextElementSibling.style.marginBlockStart = "";
+  headerItemMedia.style.color = "";
+  headerItemMedia.nextElementSibling.style.transition = "all .2s";
+  headerItemMedia.children[0].style.transform = "";
+  headerItemMedia.children[1].style.opacity = "1"
+  isMenuVisible = false;
   }
 })
 
