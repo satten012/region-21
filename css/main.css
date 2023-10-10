@@ -2074,6 +2074,7 @@ body {
     margin-top: 44px;
     background-color: rgba(0,0,0,0.6);
     text-align: start;
+    position: fixed;
 /*     background: rgba(201,86,0, 0.9);
    background-color: rgb(34,34,34);
    background: #1C1C1C; */
@@ -2091,6 +2092,7 @@ body {
 .header__item:hover > .sub-menu{
     transform: scale(1) translateY(0);
     transition: 0.5s all ease-in-out;
+
 }
 }
 .sub-menu li{
@@ -2506,3 +2508,65 @@ padding-bottom: 0;
 
 
   }
+
+#tournament{
+    background: #1c1c1c;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+
+} 
+
+#tournament .wrap{
+    padding: 160px 0 0px;
+ /*    background: linear-gradient(135deg, rgba(0, 0, 0, .7), rgba(201, 86, 0, .6) 54%), linear-gradient(112deg, rgba(0, 0, 0, .7) 39%, rgba(0, 0, 0, 0) 64%), url(../images/header-background-c83a462a.jpg); */
+    background-size: cover;
+    height: 60px;
+    min-height: 0px;
+}
+
+.main.tournament{
+    flex-grow: 1;
+}
+
+.tournament > header{
+    background: #1c1c1c;
+}
+
+.tournament > main{
+    margin-top: 50px;
+    background-size: cover;
+    min-height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 60vh;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgba(0, 0, 0, .7), rgba(201, 86, 0, .6) 54%), linear-gradient(112deg, rgba(0, 0, 0, .7) 39%, rgba(0, 0, 0, 0) 64%), url(../images/header-background-c83a462a.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container > select{
+    background: transparent;
+    width: 145px;
+    color: white;
+    border: 2px solid;
+    cursor: pointer;
+    background: #1c1c1c;
+    padding: 10px 15px ;
+}
+
+select > option {
+    background: #1c1c1c;
+    cursor: pointer;
+}
+
+.line{
+    width: 100%;
+    margin-top: 21px;
+    height: 120px !important;
+    padding: 50px;
+    background: #1c1c1c;
+}

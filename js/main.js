@@ -1,8 +1,15 @@
 const header = document.querySelector(".header")
 const body = document.querySelector("body")
-
+const headerItem = document.querySelectorAll (".header__item")
 const headerItemMedia = document.querySelector(".header__itemMedia")
 let lastScrollTop = 0; 
+let subMenu = document.querySelector(".sub-menu")
+
+document.cookie = "cookieName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+// Пример заголовка Cache-Control
+
+
+
 
 /* hide/show header */
 window.addEventListener("scroll", function() {
@@ -23,6 +30,7 @@ window.addEventListener("scroll", function() {
   }
 
 });    
+if (document.body.dataset.page === 'index') {
 
 /* добавление атрибута checked в инпут */
 const confidentiality = document.querySelector("#confidentiality")
@@ -35,6 +43,7 @@ confidentiality.addEventListener("click", function(){
         agree.setAttribute("checked", "checked")
     }
 })
+
 
 /* убрать перезагрузку страницы */
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,7 +81,7 @@ inputBoxLabelPhone.forEach(input => {
     const mask = IMask(input, maskOptions);
   }
 });
-
+}
 const headerBurger = document.querySelector(".header__burger")
 let headerNav = document.querySelector(".header__nav")
 let headerList = document.querySelector(".header__list")
@@ -136,7 +145,6 @@ let headerList = document.querySelector(".header__list")
   }
 
 
-  const headerItem = document.querySelectorAll (".header__item")
   headerItem.forEach((elem, index) => {
 
   elem.addEventListener("click", function(){
@@ -207,6 +215,8 @@ function handleResize() {
   const headerLogoImg = document.querySelector(".header__logo img")
   let styleElement = document.createElement("style");
   if (screenWidth >768){
+    console.log("222")
+    headerItemMedia.children[0].style.transform = "rotate(90deg)";
     headerNav.classList.remove("header__nav-active")
     headerList.classList.remove("header__list-active")
     headerBurger.classList.remove("show")
@@ -256,52 +266,13 @@ function handleResize() {
       
   }
 /* ффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф */
-  else if (headerItemMedia.nextElementSibling.style.marginBlockStart == "0px"){
-    headerItemMedia.children[1].style.display = ""
-    isMenuVisible = false;
-    
-    if (window.innerWidth < 769){
-      headerItemMedia.children[1].style.display = "none"
-      headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
-      headerItemMedia.style.color = "white"
-      headerItemMedia.nextElementSibling.style.transition = "all 0s"
-      headerItemMedia.children[0].style.transform = "rotate(90deg)"
-      isMenuVisible = false;
-    }
-    else{
-      headerItemMedia.children[0].style.transform = ""
-      
-    }
 
-  }
 
-  if (headerNav.classList.remove("show")){
-    body.style.overflow = "hidden";
-  styleElement.innerHTML = `
-  body::before {
-    content: "";
-    position: fixed;
-    background-color: black;
-    height: 100%;
-    width: 100vw;
-    z-index: 10;
-    opacity: 0.8;
-    transition:all 0s;
-    display:block;
-    right:0;
-    z-index:9
-    }`;
-  document.head.appendChild(styleElement);
-  headerLogoImg.style.opacity = "0.4"
-  body.style.position = "static"
-  headerLogoImg.style.transition = "all 0s"
-  }
-
-  if (headerBurger.classList.contains("show")){
-
+  else if (headerBurger.classList.contains("show") && screenWidth <768) {
     headerBurger.addEventListener("click", function(){
       console.log("1")
-      if (headerNav.classList.toggle("show")){
+      if (headerBurger.classList.contains("show")){
+        console.log("2")
         body.style.overflow = "hidden"
       styleElement.innerHTML = `
         body::before {
@@ -321,6 +292,14 @@ function handleResize() {
       headerLogoImg.style.opacity = "0.4"
       body.style.position = "static"
       headerLogoImg.style.transition = "all 0s"
+      headerItemMedia.children[0].style.transform = "";
+      headerItemMedia.children[1].style.opacity = "0"
+      headerItemMedia.children[1].style.transform = "scale(0) translateY(0)"
+      headerItemMedia.style.color = "white"
+      headerItemMedia.children[0].style.transform = "rotate(90deg)"
+          if (headerItem[4].children[0].style.transform == "rotate(90deg)"){
+            headerItem[5].style.marginBlockStart = "0px";
+          }
       }
     
       else{
@@ -342,10 +321,36 @@ function handleResize() {
     })
   }
 
+  if (headerItemMedia.nextElementSibling.style.marginBlockStart == "0px"){
+    headerItemMedia.children[1].style.display = ""
+    isMenuVisible = false;
+    
+    if (window.innerWidth < 769){
+      headerItemMedia.children[1].style.display = "none"
+      headerItemMedia.nextElementSibling.style.marginBlockStart = "0px"
+      headerItemMedia.style.color = "white"
+      headerItemMedia.nextElementSibling.style.transition = "all 0s"
+      headerItemMedia.children[0].style.transform = "rotate(90deg)"
+      isMenuVisible = false;
+    }
+    else{
+      headerItemMedia.children[0].style.transform = ""
+      
+    }
+
+  }
+
+
+
 
   if (window.innerWidth < 768 && window.innerHeight < 600) {
     headerNav.style.overflowY = 'scroll'
   }
+
+
+  
+  
+  
 
 }
 window.addEventListener("resize", handleResize);
@@ -386,7 +391,6 @@ headerItemMedia.addEventListener("click", function(){
   }
 })
 
-
 headerItemMedia.addEventListener("mouseover", function(){
   if (window.innerWidth > 769){
   headerItemMedia.children[1].style.display = "";
@@ -414,3 +418,13 @@ headerItemMedia.addEventListener("mouseleave", function(){
   }
 })
 
+/* headerItemMedia.addEventListener("click", function(){
+  if (window.innerWidth > 769){
+    headerItemMedia.children[1].style.position ="fixed"
+  }
+  else{
+    headerItemMedia.children[1].style.position ="absolute"
+  }
+
+})
+ */
