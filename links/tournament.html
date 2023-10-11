@@ -14,6 +14,9 @@
     <title>Region 21</title>
     <!-- Fonts -->
     <!--     <link rel="preconnect" href="https://fonts.bunny.net"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -56,82 +59,583 @@
             </div>
         </div>
     </header>
+    <div class="line">
 
-    <!-- <div class="line">
-        <div class="container d-flex">
+        <div class="container ">
+            <h4>Region Golden league </h4>
+            <div class="params d-flex">
 
-            <select id="cars"> as fsafsaf
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+                <div><i class="fa-solid fa-calendar-days "></i>Осінь 2023</div>
+                <div><i class="fa-solid fa-people-group"></i>9 команд</div>
+            </div>
 
-            <select id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+            <div class="stournament-statistics d-flex justify-content-start">
+                <div>Турнірна таблиця</div>
+                <div>Статистика гравців</div>
+                <div>Календар</div>
+                <div>Зал слави</div>
+                <div>Переможці</div>
+            </div>
+            <div class="regionLeagueStatistics">
+                <div class="d-flex typesOfTables">
+                    <button
+                        class="btn-statistics btn-statistics-table btn-statistics-active"><span>Таблиця</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Шахматка</span></button>
+                </div>
+                <!--             <div class="d-flex StatisticsOfAllPlayers">
+                    <button
+                        class="btn-statistics btn-statistics-table btn-statistics-active"><span>Бомбардири</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Асистенти</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Воротарі</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Гол + Пас</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Попередження</span></button>
+                </div> -->
 
-            <select id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
+                <!--             <div class="d-flex calendar">
+                    <button
+                        class="btn-statistics btn-statistics-table btn-statistics-active"><span>Бомбардири</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Асистенти</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Воротарі</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Гол + Пас</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Попередження</span></button>
+                </div>
 
-            <select id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
-            </select>
-        </div>
+                <div class="d-flex calendar">
+                    <button
+                        class="btn-statistics btn-statistics-table btn-statistics-active"><span>Бомбардири</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Асистенти</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Воротарі</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Гол + Пас</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Попередження</span></button>
+                </div>
 
-    </div> -->
-    <main class="main">
-        <div class="line">
-            <div class="container">
-                <select id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>
-
-                <select id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>
+                <div class="d-flex calendar">
+                    <button
+                        class="btn-statistics btn-statistics-table btn-statistics-active"><span>Бомбардири</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Асистенти</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Воротарі</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Гол + Пас</span></button>
+                    <button class="btn-statistics btn-statistics-chess"><span>Попередження</span></button>
+                </div> -->
             </div>
         </div>
+    </div>
+
+    <main class="main">
+
         <section class="statistics">
-            <div class="container">
+            <div class="container container-statistics">
 
-                <select id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select> <br>
+                <div class="standings">
+                    <table class="statistics-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div>#</div>
+                                </th>
+                                <th>
+                                    <div>Команда</div>
+                                <th>
+                                    <div>І</div>
+                                </th>
+                                <th>
+                                    <div>В</div>
+                                </th>
+                                <th>
+                                    <div>Н</div>
+                                </th>
+                                <th>
+                                    <div>П</div>
+                                </th>
+                                <th>
+                                    <div>ЗГ</div>
+                                </th>
+                                <th>
+                                    <div>ПГ</div>
+                                </th>
+                                <th>
+                                    <div>РГ</div>
+                                </th>
+                                <th>
+                                    <div>О</div>
+                                </th>
+                                <th>
+                                    <div>Форма</div>
+                                </th>
+                                <th>
+                                    <div>Наступна</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="">
+                                <td>
+                                    <div>cell1_1</div>
+                                </td>
+                                <td>
+                                    <div>cell2_1</div>
+                                </td>
+                                <td>
+                                    <div>cell3_1</div>
+                                </td>
+                                <td>
+                                    <div>cell4_1 </div>
+                                </td>
+                                <td>
+                                    <div>cell5_1</div>
+                                </td>
+                                <td>
+                                    <div>cell6_1</div>
+                                </td>
+                                <td>
+                                    <div>cell7_1</div>
+                                </td>
+                                <td>
+                                    <div>cell8_1</div>
+                                </td>
+                                <td>
+                                    <div>cell9_1</div>
+                                </td>
+                                <td>
+                                    <div>1</div>
+                                </td>
+                                <td>
+                                    <div>cell11_1</div>
+                                </td>
+                                <td>
+                                    <div>cell12_1</div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div>cell1_2</div>
+                                </td>
+                                <td>
+                                    <div>cell2_2</div>
+                                </td>
+                                <td>
+                                    <div>cell3_2</div>
+                                </td>
+                                <td>
+                                    <div>cell4_2</div>
+                                </td>
+                                <td>
+                                    <div>cell5_2</div>
+                                </td>
+                                <td>
+                                    <div>cell6_2</div>
+                                </td>
+                                <td>
+                                    <div>cell7_2</div>
+                                </td>
+                                <td>
+                                    <div>cell8_2</div>
+                                </td>
+                                <td>
+                                    <div>cell9_2</div>
+                                </td>
+                                <td>
+                                    <div>5</div>
+                                </td>
+                                <td>
+                                    <div>10</div>
+                                </td>
+                                <td>
+                                    <div>cell12_2</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>cell1_3</div>
+                                </td>
+                                <td>
+                                    <div>cell2_3</div>
+                                </td>
+                                <td>
+                                    <div>cell3_3</div>
+                                </td>
+                                <td>
+                                    <div>cell4_3</div>
+                                </td>
+                                <td>
+                                    <div>cell5_3</div>
+                                </td>
+                                <td>
+                                    <div>cell6_3</div>
+                                </td>
+                                <td>
+                                    <div>cell7_3</div>
+                                </td>
+                                <td>
+                                    <div>cell8_3</div>
+                                </td>
+                                <td>
+                                    <div>cell9_3</div>
+                                </td>
+                                <td>
+                                    <div>6</div>
+                                </td>
+                                <td>
+                                    <div>cell11_3</div>
+                                </td>
+                                <td>
+                                    <div>cell12_3</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>cell1_4</td>
+                                <td>
+                                    <div> <img src="../images/20230919_145147_0000.png" alt=""> <span>ФК Салтовка</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div><span>8</span></div>
+                                </td>
+                                <td>
+                                    <div>cell4_4</div>
+                                </td>
+                                <td>
+                                    <div>cell5_4</div>
+                                </td>
+                                <td>
+                                    <div>cell6_4</div>
+                                </td>
+                                <td>
+                                    <div>cell7_4</div>
+                                </td>
+                                <td>
+                                    <div>cell8_4</div>
+                                </td>
+                                <td>
+                                    <div>cell9_4</div>
+                                </td>
+                                <td>
+                                    <div>18</div>
+                                </td>
+                                <td>
+                                    <div>cell11_4</div>
+                                </td>
+                                <td>
+                                    <div>cell12_4</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>cell1_5</div>
+                                </td>
+                                <td>
+                                    <div><img src="../images/Дизайн без названия (7).png" alt="">Region</div>
+                                </td>
+                                <td>
+                                    <div>cell3_5</div>
+                                </td>
+                                <td>
+                                    <div>cell4_5</div>
+                                </td>
+                                <td>
+                                    <div>cell5_5</div>
+                                </td>
+                                <td>
+                                    <div>cell6_5</div>
+                                </td>
+                                <td>
+                                    <div>cell7_5</div>
+                                </td>
+                                <td>
+                                    <div>cell8_5</div>
+                                </td>
+                                <td>
+                                    <div>cell9_5</div>
+                                </td>
+                                <td>
+                                    <div>7</div>
+                                </td>
+                                <td>
+                                    <div>cell11_5</div>
+                                </td>
+                                <td>
+                                    <div>cell12_5</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>cell1_6</div>
+                                </td>
+                                <td>
+                                    <div>cell2_6</div>
+                                </td>
+                                <td>
+                                    <div>cell3_6</div>
+                                </td>
+                                <td>
+                                    <div>cell4_6</div>
+                                </td>
+                                <td>
+                                    <div>cell5_6</div>
+                                </td>
+                                <td>
+                                    <div>cell6_6</div>
+                                </td>
+                                <td>
+                                    <div>cell7_6</div>
+                                </td>
+                                <td>
+                                    <div>cell8_6</div>
+                                </td>
+                                <td>
+                                    <div>cell9_6</div>
+                                </td>
+                                <td>
+                                    <div>10</div>
+                                </td>
+                                <td>
+                                    <div>cell11_6</div>
+                                </td>
+                                <td>
+                                    <div>cell12_6</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>cell1_7</div>
+                                </td>
+                                <td>
+                                    <div>cell2_7</div>
+                                </td>
+                                <td>
+                                    <div>cell3_7</div>
+                                </td>
+                                <td>
+                                    <div>cell4_7</div>
+                                </td>
+                                <td>
+                                    <div>cell5_7</div>
+                                </td>
+                                <td>
+                                    <div>cell6_7</div>
+                                </td>
+                                <td>
+                                    <div>cell7_7</div>
+                                </td>
+                                <td>
+                                    <div>cell8_7</div>
+                                </td>
+                                <td>
+                                    <div>cell9_7</div>
+                                </td>
+                                <td>
+                                    <div>12</div>
+                                </td>
+                                <td>
+                                    <div>cell11_7</div>
+                                </td>
+                                <td>
+                                    <div>cell12_7</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>cell1_8</div>
+                                </td>
+                                <td>
+                                    <div>cell2_8</div>
+                                </td>
+                                <td>
+                                    <div>cell3_8</div>
+                                </td>
+                                <td>
+                                    <div>cell4_8</div>
+                                </td>
+                                <td>
+                                    <div>cell5_8</div>
+                                </td>
+                                <td>
+                                    <div>cell6_8</div>
+                                </td>
+                                <td>
+                                    <div>cell7_8</div>
+                                </td>
+                                <td>
+                                    <div>cell8_8</div>
+                                </td>
+                                <td>
+                                    <div>cell9_8</div>
+                                </td>
+                                <td>
+                                    <div>3</div>
+                                </td>
+                                <td>
+                                    <div>312421</div>
+                                </td>
+                                <td>
+                                    <div>cell12_8</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>cell1_9</div>
+                                </td>
+                                <td>
+                                    <div>cell2_9</div>
+                                </td>
+                                <td>
+                                    <div>cell3_9</div>
+                                </td>
+                                <td>
+                                    <div>cell4_9</div>
+                                </td>
+                                <td>
+                                    <div>cell5_9</div>
+                                </td>
+                                <td>
+                                    <div>cell6_9</div>
+                                </td>
+                                <td>
+                                    <div>cell7_9</div>
+                                </td>
+                                <td>
+                                    <div>cell8_9</div>
+                                </td>
+                                <td>
+                                    <div>cell9_9</div>
+                                </td>
+                                <td>
+                                    <div>5</div>
+                                </td>
+                                <td>
+                                    <div>cell11_9</div>
+                                </td>
+                                <td>
+                                    <div>cell12_9</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quis reiciendis quae provident sit, amet
-                omnis maxime ad hic. Accusantium quibusdam labore quia sequi, commodi quis id nulla obcaecati
-                voluptates!
-                Eos quibusdam corrupti at ut distinctio repudiandae. Modi quasi neque explicabo dolor possimus, quidem
-                animi aliquid ipsum quae, dolores excepturi! In, cupiditate. Sequi at adipisci quibusdam! Dolorum quis
-                necessitatibus ut!
-                Accusamus eius unde nisi minima nobis ipsa ad! Cumque, quos! Dolor blanditiis tenetur eius fugiat
-                facilis? Ipsa dolores perferendis dicta libero iure, consequatur, in porro ducimus a eos qui voluptatum.
-                Adipisci nihil rem nam quia, corrupti nemo hic, vero possimus optio illo tempora similique itaque odit
-                eum vel quibusdam beatae, facilis corporis dolore? Similique nesciunt accusamus expedita ab temporibus
-                consectetur?
-                Omnis minus modi exercitationem dolorum ad animi harum voluptatibus quam. Impedit, itaque, labore est
-                alias iusto possimus amet ut recusandae omnis voluptatum eligendi hic quis, ad voluptatem illo
-                blanditiis laboriosam!
+                    <div class="chess">
+                        <div class="nameOfTeamLeVerticalFirst"><span>Назва команди</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>1</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>2</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>3</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>4</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>5</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>6</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>7</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>8</span></div>
+                        <div class="nameOfTeamLeHorizontal"><span>9</span></div>
+                        <div class="nameOfTeamLeVertical"><span>Region 21</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>1 : 1</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>3 : 2</span></div>
+                        <div><span>6 : 0</span></div>
+                        <div class="nameOfTeamLeVertical"><span>Фенікс</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>8 : 2</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>5 : 0</span></div>
+                        <div class="nameOfTeamLeVertical"><span>Night Experience</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>0 : 5</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>3 : 2</span></div>
+                        <div><span>3 : 1</span></div>
+                        <div class="nameOfTeamLeVertical"><span>K-31</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>1 : 1</span></div>
+                        <div><span>0 : 0</span></div>
+                        <div><span>5 : 1</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="nameOfTeamLeVertical"><span>VIP - CLUB</span></div>
+                        <div><span>1 : 1</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>5 : 0</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="nameOfTeamLeVertical"><span>Регіон Харків</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>2 : 8</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>1 : 1</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="nameOfTeamLeVertical"><span>Альянс безлюдівка</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>0 : 0</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="nameOfTeamLeVertical"><span>ФК салтівка</span></div>
+                        <div><span>2 : 3</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>2 : 3</span></div>
+                        <div><span>1 : 5</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="nameOfTeamLeVertical"><span>ФК Заряд</span></div>
+                        <div><span>0 : 6</span></div>
+                        <div><span>0 : 5</span></div>
+                        <div><span>2 : 3</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div><span>- : -</span></div>
+                        <div class="emptyGame"><span>-</span></div>
+                    </div>
+                </div>
+
+                <div class="gravtsStatistics">
+                    2
+                </div>
+
+                <div class="calendar">3</div>
+
+                <div class="HallOfFame">4</div>
+
+                <div class="winners">5
+
+                    <div>
+
+                    </div>
+                    <div class="winners-team">
+                        <p class="winners-team-season">Переможець літо 2023</p>
+                        <!--                         <img src="../images/IMG_20230804_105655_724.jpg" alt=""> -->
+                        <img src="../images/20230919_145147_0000.png" alt="">
+                        <p class="winners-team-name">Фенікс</p>
+                    </div>
+                </div>
             </div>
 
         </section>

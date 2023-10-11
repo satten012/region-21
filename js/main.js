@@ -428,3 +428,87 @@ headerItemMedia.addEventListener("mouseleave", function(){
 
 })
  */
+
+if (document.body.dataset.page == 'tournament') {
+
+   // Получить ссылку на таблицу
+   const table = document.querySelector('.statistics-table');
+
+   // Получить строки таблицы
+   const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+   // Сортировка строк на основе данных в 10-й колонке
+   rows.sort((a, b) => {
+       const valueA = parseInt(a.cells[9].textContent);
+       const valueB = parseInt(b.cells[9].textContent);
+
+       return valueB - valueA; // Сортировка по убыванию
+   });
+
+   // Очистить таблицу
+   const tbody = table.querySelector('tbody');
+   tbody.innerHTML = '';
+
+   // Переберите отсортированные строки и добавьте их в таблицу
+   rows.forEach(row => {
+       tbody.appendChild(row);
+   });
+
+   const teamposition = document.querySelectorAll("tr > td:nth-child(1)")
+
+    let positionCoubn = 1   
+   teamposition.forEach((e)=>{
+    
+    e.innerText = positionCoubn
+    positionCoubn++
+   })
+
+   /*  */
+
+   const btnStatisticsTable = document.querySelector(".btn-statistics-table")
+   const btnStatisticsChess = document.querySelector(".btn-statistics-chess")
+   const statisticsTable = document.querySelector(".statistics-table")
+   const chess = document.querySelector(".chess")
+
+   btnStatisticsChess.addEventListener("click", function(){
+    chess.style.display = "grid"
+    statisticsTable.style.display = "none"
+    btnStatisticsChess.classList.add("btn-statistics-active")
+    btnStatisticsTable.classList.remove("btn-statistics-active")
+
+
+   })
+
+   btnStatisticsTable.addEventListener("click", function(){
+    chess.style.display = "none"
+    statisticsTable.style.display = "table"
+    btnStatisticsChess.classList.remove("btn-statistics-active")
+    btnStatisticsTable.classList.add("btn-statistics-active")
+   })
+
+   const stournamentStatistics = document.querySelectorAll(".stournament-statistics > div")
+   const regionLeagueStatistics = document.querySelectorAll(".regionLeagueStatistics > div")
+
+   stournamentStatistics.forEach((elem, index) => {
+    
+    elem.addEventListener("click", function(){
+      let tournamentInformations = document.querySelectorAll(".container-statistics > div")
+      tournamentInformations[index].style.display = "none"
+
+      tournamentInformations.forEach((e, indx)=>{
+        if(index == indx){
+          tournamentInformations[indx].style.display = "block"
+        }
+        else{
+          tournamentInformations[indx].style.display = "none"
+        }
+      })
+    })
+   })
+
+   
+
+  }
+
+
+
