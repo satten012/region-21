@@ -487,27 +487,42 @@ if (document.body.dataset.page == 'tournament') {
    })
 
    const stournamentStatistics = document.querySelectorAll(".stournament-statistics > div")
-   const regionLeagueStatistics = document.querySelectorAll(".regionLeagueStatistics > div")
-
    stournamentStatistics.forEach((elem, index) => {
-    
     elem.addEventListener("click", function(){
-      let tournamentInformations = document.querySelectorAll(".container-statistics > div")
+
+      for(i=0; i< stournamentStatistics.length; i++){
+        if(i != stournamentStatistics[index]){
+          stournamentStatistics[i].classList.add("hide-color")
+          stournamentStatistics[i].classList.remove("active-color")
+      
+        }
+      }
+
+      const tournamentInformations = document.querySelectorAll(".container-statistics > div")
+      const regionLeagueStatistics = document.querySelectorAll(".regionLeagueStatistics > div")
       tournamentInformations[index].style.display = "none"
+      stournamentStatistics[index].classList.add("active-color")
+
+  
 
       tournamentInformations.forEach((e, indx)=>{
+        
         if(index == indx){
           tournamentInformations[indx].style.display = "block"
+          regionLeagueStatistics[indx].style.display = "flex"
+          
         }
         else{
           tournamentInformations[indx].style.display = "none"
+          regionLeagueStatistics[indx].style.display = "none"
+          stournamentStatistics[index].classList.remove("hide-color")
+  
         }
       })
     })
    })
 
    
-
   }
 
 
