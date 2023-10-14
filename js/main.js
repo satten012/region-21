@@ -522,6 +522,21 @@ if (document.body.dataset.page == 'tournament') {
     })
    })
 
+   const gravtsStatisticsScoreGames = document.querySelectorAll(".gravtsStatistics-scoreGames")
+   const gravtsStatisticsScoreGals = document.querySelectorAll(".gravtsStatistics-scoreGals")
+   const gravtsStatisticsScoreAverage = document.querySelectorAll(".gravtsStatistics-scoreAverage")
+
+   console.log(gravtsStatisticsScoreGames)
+   console.log(gravtsStatisticsScoreGals)
+   console.log(gravtsStatisticsScoreAverage)
+
+   gravtsStatisticsScoreGames.forEach((elem, index) => {
+   const avRate = (Number( gravtsStatisticsScoreGals[index].textContent) / Number( gravtsStatisticsScoreGames[index].textContent)).toFixed(2)
+   gravtsStatisticsScoreAverage[index].innerHTML = avRate
+  })
+
+  const gravtsStatisticsScorers = document.querySelector(".gravtsStatistics-scorers")
+  const sortByGoals = Array.from(gravtsStatisticsScorers.rows)
    
   }
 

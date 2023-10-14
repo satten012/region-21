@@ -100,6 +100,8 @@ select > option {
 /*     margin-top: 30px; */
     color: white;
     margin-top: 50px;
+    /* aaaaaaaaa */
+    display: ;
 }
 
 
@@ -291,7 +293,9 @@ td > div{
     color: white;
     margin-top: 50px;
 /*     border: 3px solid #1c1c1c; */
-    width: 1000px;
+    max-width: 1000px;
+    /* aaaaa */
+    display: none;
 }
 
 
@@ -398,3 +402,47 @@ div span{
     transform: translate3d(0px, 0px, -250px);
     box-shadow: 26px 24px 5px 0px rgba(0,0,0,0.75);
 }
+
+.gravtsStatistics-scorers{
+/*     color: white;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: lightcoral;
+    width: 100%;
+    margin-top: 50px; */
+    display: grid;
+grid-template-columns: 0.8fr repeat(2, 4fr) repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+color:white;
+text-align: center;
+margin-top: 50px;
+}
+
+.gravtsStatistics-scorers > .gravtsStatistics-scorersTitle:nth-child(n+2):nth-child(-n+3),
+.gravtsStatistics-scorersPlayer, .gravtsStatistics-scorersTeam{
+    text-align: start;
+}
+
+
+
+.gravtsStatistics-scorers > div{
+    height: 44px;
+    line-height: 44px;
+}
+
+.gravtsStatistics-scorersPlayer, 
+.gravtsStatistics-scorersTitle:nth-child(n+2):nth-child(-n+3),.gravtsStatistics-scorersPlayer, .gravtsStatistics-scorersTeam {
+    padding-left: 15px;
+}
+
+
+
+.gravtsStatistics-scorersTitle, 
+.gravtsStatistics-scorersNumber{
+    background-color: #1C1C1C;
+}
+
+/* .gravtsStatistics-scorersNumber, .gravtsStatistics-scorers > div:nth-child(1){
+    width: 50px;
+} */
