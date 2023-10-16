@@ -535,10 +535,73 @@ if (document.body.dataset.page == 'tournament') {
    gravtsStatisticsScoreAverage[index].innerHTML = avRate
   })
 
-  const gravtsStatisticsScorers = document.querySelector(".gravtsStatistics-scorers")
-  const sortByGoals = Array.from(gravtsStatisticsScorers.rows)
-   
+
+
   }
 
 
 
+  const gravtsStatisticsScorers = document.querySelectorAll(".gravtsStatistics-scorers > div")
+  const sortByGoals = Array.from(gravtsStatisticsScorers)
+  console.log(sortByGoals.length)
+
+  let outerArray = [];
+  let count = 0
+
+  for (let i = 0; i < 11; i++) {
+      let innerArray = [];
+
+      outerArray.push(innerArray); 
+      for (let j = 0; j < 6; j++) {
+        outerArray[i].push(sortByGoals[count].textContent);
+        count ++
+  }
+  
+}
+
+const gravtsStatisticsScorersNumber = document.querySelectorAll(".gravtsStatistics-scorersNumber")
+
+
+
+
+outerArray.sort((a,b) => b[4] - a [4])
+
+console.log(outerArray);
+
+
+
+for(let i = 0; i <gravtsStatisticsScorers.length; i++){
+  gravtsStatisticsScorers[i].innerText = outerArray.flat()[i]
+}
+
+let countNumber = 1
+gravtsStatisticsScorersNumber.forEach(function(e, index){
+  gravtsStatisticsScorersNumber[index].innerText = countNumber
+  countNumber ++
+})
+
+
+
+const StatisticsOfAllPlayers  = document.querySelectorAll(".StatisticsOfAllPlayers  > button")
+const gravtsStatistics = document.querySelectorAll(".gravtsStatistics > div");
+
+gravtsStatistics.forEach((e,inxs)=>{
+ gravtsStatistics[inxs].display = "none"
+ console.log(gravtsStatistics[inxs])
+})
+
+
+StatisticsOfAllPlayers.forEach((e,inx)=>{
+
+
+  e.addEventListener("click", function(){
+    console.log(inx)
+  })
+})
+
+
+/* gravtsStatistics.forEach((elem, index) => {
+  elem.addEventListener("click", function(){
+    console.log(`Клик произошел на элементе с индексом: ${index}`);
+  });
+}); */

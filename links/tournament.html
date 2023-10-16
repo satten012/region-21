@@ -20,6 +20,10 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!--  -->
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <!--  -->
     <link rel="stylesheet" href="../css/tournament.css">
     <link rel="stylesheet" href="../css/main.css">
 
@@ -61,7 +65,7 @@
         </div>
     </header>
     <div class="line">
-
+        <!-- <div id="myGrid" class="ag-theme-alpine" style="height: 500px"></div> -->
         <div class="container ">
             <h4>Region Golden league </h4>
             <div class="params d-flex">
@@ -608,14 +612,15 @@
                 </div>
 
                 <div class="gravtsStatistics">
-                    <div class="gravtsStatistics-scorers">
+
+                    <div ref="tableStart" class="gravtsStatistics-scorers" id="gravtsStatistics-scorers">
                         <div class="gravtsStatistics-scorersTitle"><span>#</span></div>
                         <div class="gravtsStatistics-scorersTitle"><span>Гравець</span></div>
                         <div class="gravtsStatistics-scorersTitle"><span>Команда</span></div>
                         <div class="gravtsStatistics-scorersTitle"><span>І</span></div>
                         <div class="gravtsStatistics-scorersTitle"><span>Г</span></div>
                         <div class="gravtsStatistics-scorersTitle"><span>СР</span></div>
-                        <div class="gravtsStatistics-scorersNumber"><span>1</span></div>
+                        <div class="gravtsStatistics-scorersNumber"><span>111</span></div>
                         <div class="gravtsStatistics-scorersPlayer"><span>Бараненко Алексей</span></div>
                         <div class="gravtsStatistics-scorersTeam"><span>Region 21</span></div>
                         <div class="gravtsStatistics-scoreGames"><span>4</span></div>
@@ -673,7 +678,7 @@
                         <div class="gravtsStatistics-scorersPlayer"><span>Андриевский имя</span></div>
                         <div class="gravtsStatistics-scorersTeam"><span>Регион Харьков</span></div>
                         <div class="gravtsStatistics-scoreGames"><span>3</span></div>
-                        <div class="gravtsStatistics-scoreGals"><span>4</span></div>
+                        <div class="gravtsStatistics-scoreGals"><span>25</span></div>
                         <div class="gravtsStatistics-scoreAverage"><span>1</span></div>
 
                     </div>
@@ -724,7 +729,7 @@
                         </li>
 
                         <!--     <li class="footer__list-item"><a href="#">Команда</a></li> -->
-                        <!--         <li class="footer__list-item"><a href="#">Медія</a></li> -->
+                        <li class="footer__list-item"><a href="#">Медія</a></li>
 
                         <li class="footer__list-item"><a href="#partner">Партнери</a></li>
                         <li class="footer__list-item"><a href="#contacts">Контакти</a></li>
@@ -824,7 +829,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
-
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
     <script src="../js/main.js"></script>
 
     <script>
