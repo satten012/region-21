@@ -215,7 +215,6 @@ function handleResize() {
   const headerLogoImg = document.querySelector(".header__logo img")
   let styleElement = document.createElement("style");
   if (screenWidth >768){
-    console.log("222")
     headerItemMedia.children[0].style.transform = "rotate(90deg)";
     headerNav.classList.remove("header__nav-active")
     headerList.classList.remove("header__list-active")
@@ -270,9 +269,7 @@ function handleResize() {
 
   else if (headerBurger.classList.contains("show") && screenWidth <768) {
     headerBurger.addEventListener("click", function(){
-      console.log("1")
       if (headerBurger.classList.contains("show")){
-        console.log("2")
         body.style.overflow = "hidden"
       styleElement.innerHTML = `
         body::before {
@@ -490,6 +487,7 @@ if (document.body.dataset.page == 'tournament') {
    stournamentStatistics.forEach((elem, index) => {
     elem.addEventListener("click", function(){
 
+
       for(i=0; i< stournamentStatistics.length; i++){
         if(i != stournamentStatistics[index]){
           stournamentStatistics[i].classList.add("hide-color")
@@ -519,6 +517,10 @@ if (document.body.dataset.page == 'tournament') {
   
         }
       })
+
+      
+
+
     })
    })
 
@@ -526,9 +528,6 @@ if (document.body.dataset.page == 'tournament') {
    const gravtsStatisticsScoreGals = document.querySelectorAll(".gravtsStatistics-scoreGals")
    const gravtsStatisticsScoreAverage = document.querySelectorAll(".gravtsStatistics-scoreAverage")
 
-   console.log(gravtsStatisticsScoreGames)
-   console.log(gravtsStatisticsScoreGals)
-   console.log(gravtsStatisticsScoreAverage)
 
    gravtsStatisticsScoreGames.forEach((elem, index) => {
    const avRate = (Number( gravtsStatisticsScoreGals[index].textContent) / Number( gravtsStatisticsScoreGames[index].textContent)).toFixed(2)
@@ -542,8 +541,8 @@ if (document.body.dataset.page == 'tournament') {
 
 
   const gravtsStatisticsScorers = document.querySelectorAll(".gravtsStatistics-scorers > div")
+  const gravtsStatisticsScorersAsisstants = document.querySelectorAll("gravtsStatistics-assistants > div")
   const sortByGoals = Array.from(gravtsStatisticsScorers)
-  console.log(sortByGoals.length)
 
   let outerArray = [];
   let count = 0
@@ -566,7 +565,6 @@ const gravtsStatisticsScorersNumber = document.querySelectorAll(".gravtsStatisti
 
 outerArray.sort((a,b) => b[4] - a [4])
 
-console.log(outerArray);
 
 
 
@@ -585,23 +583,53 @@ gravtsStatisticsScorersNumber.forEach(function(e, index){
 const StatisticsOfAllPlayers  = document.querySelectorAll(".StatisticsOfAllPlayers  > button")
 const gravtsStatistics = document.querySelectorAll(".gravtsStatistics > div");
 
-gravtsStatistics.forEach((e,inxs)=>{
- gravtsStatistics[inxs].display = "none"
- console.log(gravtsStatistics[inxs])
-})
+
 
 
 StatisticsOfAllPlayers.forEach((e,inx)=>{
+  
 
-
-  e.addEventListener("click", function(){
-    console.log(inx)
+  e.addEventListener("click", function(eb, idd){
+    gravtsStatistics[inx].style.display = "grid"
+    StatisticsOfAllPlayers[inx].classList.add("btn-statistics-active")
+    gravtsStatistics.forEach((eb,dd)=>{
+      if (inx != dd){
+        gravtsStatistics[dd].style.display = "none"
+        StatisticsOfAllPlayers[dd].classList.remove("btn-statistics-active")
+      }
+    
+    })
   })
 })
 
 
-/* gravtsStatistics.forEach((elem, index) => {
-  elem.addEventListener("click", function(){
-    console.log(`Клик произошел на элементе с индексом: ${index}`);
-  });
-}); */
+const HallOfFameStatistics = document.querySelectorAll(".HallOfFameStatistics > button")
+const HallOfFameWinners = document.querySelectorAll(".HallOfFame > div")
+
+
+HallOfFameStatistics.forEach((a,o)=>{
+  a.addEventListener("click", function(){
+   if (o == 0){
+    HallOfFameWinners[0].style.display = "block"
+    HallOfFameWinners[1].style.display = "block"
+   }
+   else if (o == 1){
+    HallOfFameWinners[0].style.display = "block"
+    HallOfFameWinners[1].style.display = "none"
+   }
+   else{
+    HallOfFameWinners[0].style.display = "none"
+    HallOfFameWinners[1].style.display = "block"
+   }
+
+    HallOfFameStatistics.forEach((n,m)=>{
+      HallOfFameStatistics[m].classList.remove("btn-statistics-active")
+
+    })
+
+    HallOfFameStatistics[o].classList.add("btn-statistics-active")
+
+    
+
+  })
+})
