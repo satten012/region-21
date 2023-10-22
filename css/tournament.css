@@ -403,7 +403,7 @@ div span{
     box-shadow: 26px 24px 5px 0px rgba(0,0,0,0.75);
 }
 
-.gravtsStatistics-scorers, .gravtsStatistics-assistants{
+.gravtsStatistics-scorers, .gravtsStatistics-assistants, .gravtsStatistics-goalPass, .gravtsStatistics-cards{
 /*     color: white;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -426,7 +426,8 @@ margin-top: 50px;
 
 
 
-.gravtsStatistics-scorers > div, .gravtsStatistics-assistants > div{
+.gravtsStatistics-scorers > div, .gravtsStatistics-assistants > div, 
+.gravtsStatistics-goalPass > div, .gravtsStatistics-cards > div{
     height: 44px;
     line-height: 44px;
 }
@@ -450,4 +451,8 @@ margin-top: 50px;
 
 .gravtsStatistics > div:nth-child(1){
     display: grid;
+}
+
+.gravtsStatistics, .calendar{
+    display: none;
 }

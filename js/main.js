@@ -541,8 +541,13 @@ if (document.body.dataset.page == 'tournament') {
 
 
   const gravtsStatisticsScorers = document.querySelectorAll(".gravtsStatistics-scorers > div")
-  const gravtsStatisticsScorersAsisstants = document.querySelectorAll("gravtsStatistics-assistants > div")
+  const gravtsStatisticsScorersAsisstants = document.querySelectorAll(".gravtsStatistics-assistants > div")
+  const gravtsStatisticsGoalPass = document.querySelectorAll(".gravtsStatistics-goalPass > div")
+
+
+
   const sortByGoals = Array.from(gravtsStatisticsScorers)
+  const sortbyAssuist = Array.from(gravtsStatisticsScorersAsisstants)
 
   let outerArray = [];
   let count = 0
@@ -558,15 +563,25 @@ if (document.body.dataset.page == 'tournament') {
   
 }
 
-const gravtsStatisticsScorersNumber = document.querySelectorAll(".gravtsStatistics-scorersNumber")
+let assArr = [];
+let assCount = 0
+
+for (let i = 0; i < 11; i++) {
+  let innerArrayAssist = [];
+
+  assArr.push(innerArrayAssist); 
+  for (let j = 0; j < 6; j++) {
+    assArr[i].push(sortbyAssuist[assCount].textContent);
+    assCount ++
+}
+
+}
 
 
 
+/* от 1 до 10  */
 
-outerArray.sort((a,b) => b[4] - a [4])
-
-
-
+const gravtsStatisticsScorersNumber = document.querySelectorAll(".gravtsStatistics-scorers > .gravtsStatistics-scorersNumber")
 
 for(let i = 0; i <gravtsStatisticsScorers.length; i++){
   gravtsStatisticsScorers[i].innerText = outerArray.flat()[i]
@@ -577,6 +592,32 @@ gravtsStatisticsScorersNumber.forEach(function(e, index){
   gravtsStatisticsScorersNumber[index].innerText = countNumber
   countNumber ++
 })
+
+
+
+/* фильтр таблицы */
+outerArray.sort((a,b) => b[4] - a [4])
+assArr.sort((a,b) => b[4] - a [4])
+
+
+/* отрисовка таблицы */
+const gravtsStatisticsScorersId = document.querySelector(".gravtsStatistics-scorers")
+
+const filterTables = function (arr, newArr){
+let countContent = 0 
+for (let i = 0; i <11; i++){
+  for (let b =0; b <6; b++ ){
+    arr[countContent].innerText = newArr[i][b]
+    countContent ++
+  }
+}
+}
+
+
+filterTables(sortByGoals, outerArray)
+filterTables(sortbyAssuist, assArr)
+
+
 
 
 
