@@ -453,6 +453,51 @@ margin-top: 50px;
     display: grid;
 }
 
-.gravtsStatistics, .calendar{
+.calendar > div {
+    color: white;
+    margin-top: 50px;
+}
+
+.calendar > div >  div:nth-child(1) {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.calendar > div >  div:nth-child(2){
+    background-color: #a85b03;
+    padding: 0 15px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #a85b03;
+}
+
+.gravtsStatistics, .calendar,.winners{
     display: none;
+}
+
+.form{
+    display: flex;
+}
+
+.form > div {
+border-radius: 50%;
+height: 33px;
+width: 33px;
+text-align: center;
+line-height: 34px;
+margin-right: 5px;
+}
+
+.draw{
+    background-color: #ff8a00;
+}
+
+.win{
+    background-color: #07924d;
+}
+
+.vip-club-logo > img {
+    height: 60px;
 }
