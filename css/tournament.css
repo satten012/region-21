@@ -344,6 +344,31 @@ div span{
     font-weight: 700;
 }
 
+.nameOfTeamLeVerticalFirst, thead > tr > th:nth-child(1){
+    text-align: center;
+}
+
+
+.nameOfTeamLeVerticalFirst, thead > tr > th:nth-child(n+3){
+    text-align: center;
+}
+
+tbody > tr > td > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+tbody > tr > td:nth-child(2) > div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+tbody > tr > td:nth-child(11), tbody > tr > td:nth-child(12) {
+min-width: 120px;
+
+}/* max-width: 220px  */
 /* .standings, .gravtsStatistics, .calendar 
 .HallOfFame {
     display: none;
